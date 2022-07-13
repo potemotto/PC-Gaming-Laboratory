@@ -26,7 +26,8 @@ pc ゲーミングに必要な性能を大まかに調べられ、好きなタ�
 
 ## 設計書
 
-後日 URL を載せたファイルに差し替え予定
+ER図 https://app.diagrams.net/?src=about#G10Ms0RqQf0Djp-YBpjZrz5oLOd3BQ4hdu
+テーブル定義書 https://docs.google.com/spreadsheets/d/1wUcEsWnXVxRH0F8q6oEPKe9xVURfjW7wZJ1eSScmKgo/edit#gid=1373217982
 
 ## 開発環境
 
