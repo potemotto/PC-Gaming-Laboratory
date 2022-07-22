@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: {
+  devise_for :admins, skip: [:registrations, :passwords],  controllers: {
     sessions: "admin/sessions"
   }
   
   namespace :admin do
     root to: "homes#top"
     resources :aricles, except: [:destroy]
-    resources :cpu_lists, only: [:index,:show,:edit,:update]
-    resources :gpu_lists, only: [:index,:show,:edit,:update]
+    resources :cpu_lists, except: [:destroy]
+    resources :gpu_lists, except: [:destroy]
     resources :game_titles, except: [:destroy]
-    resources :genres, only: [:new,:create,:index,:edit,:update]
+    resources :genres, only: [:index,:create,:edit,:update]
+    resources :types, only: [:index,:create,:edit,:update]
     resources :customers, only: [:index,:show,:edit,:update]
     resources :pc_preset
     
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:edit,:update]
     get "customers/my_page" => "customers#show"
     get "about" => "homes#about"
+    get "how_to_use" => "homes#explanation"
   
   
   end

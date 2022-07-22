@@ -1,0 +1,23 @@
+admin/game_titles#new
+<h1>ゲームタイトル登録ページ</h1>
+
+  
+  <table class = "table">
+  <thead>
+    <h2>タイトル情報</h2><br>
+  </thead>
+  <tbody>
+    <%= form_with model: @game_title, url: admin_game_titles_path do |f| %>
+      <tr><td>
+      <lavel>タイトル情報登録</lavel>
+      </td><td>
+      <%= f.text_field :name %>
+      </td>
+      <td>
+      <%= f.submit "新規登録" %>
+      </td></tr>
+      <% end %>
+      </tbody>
+    </table>
+    
+    

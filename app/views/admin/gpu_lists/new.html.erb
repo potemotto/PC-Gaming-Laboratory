@@ -1,0 +1,49 @@
+admin/gpu_lists#new
+<h1>GPU情報登録ページ</h1>
+<table class = "table">
+  <%= form_with model: @gpu_list, url: admin_gpu_lists_path do |f| %>
+  <thead>
+  </thead>
+    <tbody>
+      <tr><td>
+      <lavel>メーカー</lavel>
+      </td><td>
+      <%= f.select :maker, ["nvida","AMD"] %>
+      </td></tr>
+
+      <tr><td>
+      <lavel>名称</lavel>
+      </td><td>
+      <%= f.text_field :name %>
+      </td></tr>
+
+      <tr><td>
+      <lavel>スコア(Tflops)FP32</lavel>
+      </td><td>
+      <%= f.text_field :score %>
+      </td></tr>
+
+      <tr><td>
+      <lavel>ビデオメモリ(GB)</lavel>
+      </td><td>
+      <%= f.text_field :video_memory %>
+      </td></tr>
+
+      <tr><td>
+      <lavel>DirectX</lavel>
+      </td><td>
+      <%= f.text_field :DirectX %>
+      </td></tr>
+
+      <tr><td>
+      <lavel>リリース年</lavel>
+      </td><td>
+      <%= f.text_field :year_of_release %>
+      </td></tr>
+
+      <tr><td>
+      <%= f.submit "新規登録" %>
+      </td></tr>
+      </tbody>
+    </table>
+    <% end %>

@@ -1,2 +1,8 @@
-admin/homes#edit
+admin/homes#top
 <h1>メニュー画面</h1>
+
+<h1><%= link_to "CPU一覧", admin_cpu_lists_path %> <%= link_to "CPU登録", new_admin_cpu_list_path %> <%= link_to "おすすめPC一覧", admin_pc_preset_index_path %></h1><br>
+
+<h1><%= link_to "GPU一覧", admin_gpu_lists_path %> <%= link_to "GPU登録", new_admin_gpu_list_path %> <%= link_to "ジャンル一覧", admin_genres_path %></h1><br>
+
+<h1><%= link_to "ユーザー一覧", admin_customers_path %> <%= link_to "タイトル一覧", admin_game_titles_path %> <%= link_to "記事一覧", admin_aricles_path %></h1><br>

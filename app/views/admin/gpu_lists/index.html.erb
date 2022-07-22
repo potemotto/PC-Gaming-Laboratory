@@ -1,0 +1,24 @@
+admin/gpu_lists#index
+<h1>GPU一覧ページ</h1>
+<%= link_to "GPU情報登録ページ", new_admin_gpu_list_path %>
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>メーカー</th>
+          <th>GPU名</th>
+          <th>リリース年</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @gpu_lists.each do |gpu_lists| %>
+        <tr>
+          <td><%= gpu_lists.maker %></td>
+          <td><%= gpu_lists.name %></td>
+          <td><%= gpu_lists.year_of_release %></td>
+          <td><%= link_to "詳細", admin_gpu_lists_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "編集", edit_admin_gpu_list_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

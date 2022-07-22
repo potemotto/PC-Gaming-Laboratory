@@ -1,2 +1,21 @@
 admin/customers#index
 <h1>ユーザ一覧</h1>
+<table class = "table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ユーザー名</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @publics.each do |public| %>
+      <tr>
+        <td><%= public.id %></td>
+        <td><%= public.name %></td>
+        <td><%= link_to "詳細", admin_customer_path(public.id) ,class: "btn btn-primary" %></td>
+        <td><%= link_to "編集", edit_admin_customer_path(public.id) ,class: "btn btn-primary" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
