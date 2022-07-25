@@ -1,2 +1,42 @@
 admin/cpu_lists#edit
-<h1>CPU情報ページ</h1>
+<h1>CPU情報編集ページ</h1>
+
+<h2>CPU情報編集</h2><br>
+      <%= form_with model: @cpu_list, url: admin_cpu_list_path(@cpu_list.id) do |f| %>
+    <table class = "table">
+          <tr><td>メーカー</td><td>
+          <%= f.select :maker, ["intel","AMD"] %>
+          </td></tr>
+
+          <tr><td>名称</td><td>
+          <%= f.text_field :name %>
+          </td></tr>
+
+          <tr><td>シングルスコア</td><td>
+          <%= f.text_field :single_score %>
+          </td></tr>
+
+          <tr><td>マルチスコア</td><td>
+          <%= f.text_field :multiscore %>
+          </td></tr>
+
+          <tr><td>クロック(MHz)</td><td>
+          <%= f.text_field :clock %>
+          </td></tr>
+
+          <tr><td>コア数</td><td>
+          <%= f.text_field :number_of_cores %>
+          </td></tr>
+
+          <tr><td>スレッド数</td><td>
+          <%= f.text_field :number_of_threads %>
+          </td></tr>
+
+          <tr><td>リリース年</td><td>
+          <%= f.text_field :year_of_release %>
+          </td></tr>
+        </table>
+
+          <%= f.submit "変更を保存", class: "btn btn-primary" %>
+
+      <% end %>

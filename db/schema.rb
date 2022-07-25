@@ -90,17 +90,6 @@ ActiveRecord::Schema.define(version: 2022_07_17_002856) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "operating_systems", force: :cascade do |t|
-    t.string "name"
-    t.integer "bit_type"
-    t.integer "memory_capacity"
-    t.integer "DirectX"
-    t.integer "year_of_release"
-    t.integer "upper_memory_limit"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "publics", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -118,6 +107,16 @@ ActiveRecord::Schema.define(version: 2022_07_17_002856) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_publics_on_email", unique: true
     t.index ["reset_password_token"], name: "index_publics_on_reset_password_token", unique: true
+  end
+
+  create_table "systems", force: :cascade do |t|
+    t.string "name"
+    t.integer "bit_type"
+    t.integer "DirectX"
+    t.integer "year_of_release"
+    t.integer "upper_memory_limit"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "types", force: :cascade do |t|

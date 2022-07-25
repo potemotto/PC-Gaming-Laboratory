@@ -9,15 +9,43 @@ admin/game_titles#new
   <tbody>
     <%= form_with model: @game_title, url: admin_game_titles_path do |f| %>
       <tr><td>
-      <lavel>タイトル情報登録</lavel>
+      タイトル名
       </td><td>
       <%= f.text_field :name %>
-      </td>
-      <td>
-      <%= f.submit "新規登録" %>
       </td></tr>
-      <% end %>
+      
+      <tr><td>
+      ゲームジャンル
+      </td><td>
+      <%= f.text_field :genre %>
+      </td></tr>
+      
+      <tr><td>
+      要求CPU性能
+      </td><td>
+      <%= f.text_field :name %>
+      </td></tr>
+      
+      <tr><td>
+      要求GPU性能
+      </td><td>
+      <%= f.text_field :name %>
+      </td></tr>
+      
+      <tr><td>
+      必要OSバージョン
+      </td><td>
+      <%= f.text_field :name %>
+      </td></tr>
+      
+      <tr><td>
+      タイトル名
+      </td><td>
+      <%= f.text_field :name %>
+      </td></tr>
+      
       </tbody>
     </table>
-    
+    <%= f.submit "新規登録" %>
+    <% end %>
     

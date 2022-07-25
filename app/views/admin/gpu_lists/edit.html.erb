@@ -1,2 +1,34 @@
 admin/gpu_lists#edit
 <h1>GPU編集ページ</h1>
+
+ <%= form_with model: @gpu_list, url: admin_gpu_list_path(@gpu_list.id) do |f| %>
+    <table class = "table">
+          <tr><td>メーカー</td><td>
+          <%= f.select :maker, ["NVIDIA","AMD"] %>
+          </td></tr>
+
+          <tr><td>名称</td><td>
+          <%= f.text_field :name %>
+          </td></tr>
+
+          <tr><td>スコア</td><td>
+          <%= f.text_field :score %>
+          </td></tr>
+
+          <tr><td>ビデオメモリ</td><td>
+          <%= f.text_field :video_memory %>
+          </td></tr>
+
+          <tr><td>DirectX</td><td>
+          <%= f.text_field :DirectX %>
+          </td></tr>
+
+          <tr><td>リリース年</td><td>
+          <%= f.text_field :year_of_release %>
+          </td></tr>
+          </table>
+          
+          <%= f.submit "変更を保存", class: "btn btn-primary" %>
+          
+      <% end %>
+    

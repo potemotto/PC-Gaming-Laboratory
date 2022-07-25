@@ -8,7 +8,7 @@ admin/gpu_lists#new
       <tr><td>
       <lavel>メーカー</lavel>
       </td><td>
-      <%= f.select :maker, ["nvida","AMD"] %>
+      <%= f.select :maker, ["NVIDIA","AMD"] %>
       </td></tr>
 
       <tr><td>
@@ -18,7 +18,7 @@ admin/gpu_lists#new
       </td></tr>
 
       <tr><td>
-      <lavel>スコア(Tflops)FP32</lavel>
+      <lavel>スコア(Gflops)FP32</lavel>
       </td><td>
       <%= f.text_field :score %>
       </td></tr>
@@ -40,10 +40,8 @@ admin/gpu_lists#new
       </td><td>
       <%= f.text_field :year_of_release %>
       </td></tr>
-
-      <tr><td>
-      <%= f.submit "新規登録" %>
-      </td></tr>
-      </tbody>
     </table>
+
+    <%= f.submit "新規登録" %>
+
     <% end %>

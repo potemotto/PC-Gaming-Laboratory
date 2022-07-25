@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'admin/operating_systems'
+  get 'admin/index'
+  get 'admin/edit'
+  get 'operating_systems/index'
+  get 'operating_systems/edit'
   devise_for :admins, skip: [:registrations, :passwords],  controllers: {
     sessions: "admin/sessions"
   }
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
     resources :types, only: [:index,:create,:edit,:update]
     resources :customers, only: [:index,:show,:edit,:update]
     resources :pc_preset
+    resources :systems, only: [:new:index,:create,:edit,:update]
     
   end
   
