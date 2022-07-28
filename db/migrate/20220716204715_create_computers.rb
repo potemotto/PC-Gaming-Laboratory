@@ -2,7 +2,7 @@ class CreateComputers < ActiveRecord::Migration[6.1]
   def change
     create_table :computers do |t|
       
-      t.integer :operating_system_id
+      t.integer :system_id
       t.integer :cpu_list_id
       t.integer :gpu_list_id
       t.string :name         

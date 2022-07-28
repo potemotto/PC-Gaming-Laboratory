@@ -1,0 +1,13 @@
+admin/systems#show
+<h1>OS情報詳細ページ</h1>
+<table class = "table table-hover">
+      <thead>
+      </thead>
+      <tbody>
+        <tr><td>名称</td><td><%= @system.name %></td></tr>
+        <tr><td>bit数</td><td><%= @system.bit_type %></td></tr>
+        <tr><td>上限メモリ(GB)</td><td><%= @system.upper_memory_limit %></td></tr>
+        <tr><td>DirectX</td><td><%= @system.DirectX %></td></tr>
+        <tr><td>リリース年</td><td><%= @system.year_of_release %></td></tr>
+      </tbody>
+    </table>

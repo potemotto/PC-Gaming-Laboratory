@@ -16,7 +16,7 @@ admin/gpu_lists#index
           <td><%= gpu_lists.maker %></td>
           <td><%= gpu_lists.name %></td>
           <td><%= gpu_lists.year_of_release %></td>
-          <td><%= link_to "詳細", admin_gpu_lists_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "詳細", admin_gpu_list_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
           <td><%= link_to "編集", edit_admin_gpu_list_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
         </tr>
         <% end %>

@@ -1,0 +1,29 @@
+<h1>Admin/systems#edit</h1>
+<h1>OS情報編集ページ</h1>
+
+      <%= form_with model: @system, url: admin_cpu_list_path(@system.id) do |f| %>
+    <table class = "table">
+          <tr><td>名称</td><td>
+          <%= f.text_field :name %>
+          </td></tr>
+
+          <tr><td>bit数</td><td>
+          <%= f.select :bit_type, ["64bit","32bit"] %>
+          </td></tr>
+
+          <tr><td>上限メモリ(GB)</td><td>
+          <%= f.text_field :upper_memory_limit%>
+          </td></tr>
+
+          <tr><td>DirectX</td><td>
+          <%= f.text_field :DirectX %>
+          </td></tr>
+
+          <tr><td>リリース年</td><td>
+          <%= f.text_field :year_of_release %>
+          </td></tr>
+        </table>
+
+          <%= f.submit "変更を保存", class: "btn btn-primary" %>
+
+      <% end %>

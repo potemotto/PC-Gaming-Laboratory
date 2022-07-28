@@ -1,4 +1,4 @@
-<h1>Admin/operating_systems#index</h1>
+<h1>Admin/systems#index</h1>
 <h1>OS情報一覧ページ</h1>
 <%= link_to "OS登録ページ", new_admin_system_path %>
 
@@ -7,9 +7,6 @@
         <tr>
           <th>OS名称</th>
           <th>ビット数</th>
-          <th>上限メモリ</th>
-          <th>DirectX</th>
-          <th>リリース年</th>
           <th colspan="1"></th>
         </tr>
       </thead>
@@ -17,10 +14,8 @@
         <% @systems.each do |system| %>
         <tr>
           <td><%= system.name %></td>
-          <td><%= system.bit_type %></td>
-          <td><%= system.upper_memory_limit %></td>
-          <td><%= system.DirectX %></td>
-          <td><%= system.year_of_release %></td>
+          <td><%= system.bit_type %>bit</td>
+          <td><%= link_to "詳細", admin_system_path(system.id) ,class: "btn btn-primary" %></td>
           <td><%= link_to "編集", edit_admin_system_path(system.id) ,class: "btn btn-primary" %></td>
         </tr>
         <% end %>

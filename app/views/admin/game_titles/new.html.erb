@@ -1,7 +1,7 @@
 admin/game_titles#new
 <h1>ゲームタイトル登録ページ</h1>
 
-  
+
   <table class = "table">
   <thead>
     <h2>タイトル情報</h2><br>
@@ -13,39 +13,44 @@ admin/game_titles#new
       </td><td>
       <%= f.text_field :name %>
       </td></tr>
-      
+
       <tr><td>
       ゲームジャンル
       </td><td>
-      <%= f.text_field :genre %>
+      <%= f.select :genre_id, Genre.all.map{ |genre| [genre.name, genre.id]} %>
       </td></tr>
-      
+
       <tr><td>
       要求CPU性能
       </td><td>
-      <%= f.text_field :name %>
+      <%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name,cpu.id]} %>
       </td></tr>
-      
+
       <tr><td>
       要求GPU性能
       </td><td>
-      <%= f.text_field :name %>
+      <%= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name,gpu.id]} %>
       </td></tr>
-      
+
       <tr><td>
       必要OSバージョン
       </td><td>
-      <%= f.text_field :name %>
+      <%= f.select :system_id, System.all.map{ |system| [system.name,system.id]} %>
       </td></tr>
-      
+
       <tr><td>
-      タイトル名
+      要求メモリ量(GB)
       </td><td>
-      <%= f.text_field :name %>
+      <%= f.text_field :recommended_memory %>
       </td></tr>
-      
+
+      <tr><td>
+      要求ストレージ(GB)
+      </td><td>
+      <%= f.text_field :request_storage %>
+      </td></tr>
+
       </tbody>
     </table>
     <%= f.submit "新規登録" %>
     <% end %>
-    

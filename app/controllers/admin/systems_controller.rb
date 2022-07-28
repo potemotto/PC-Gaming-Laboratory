@@ -18,6 +18,10 @@ class Admin::SystemsController < ApplicationController
     end
   end
 
+  def show
+    @system = System.find(params[:id])
+  end
+
   def edit
     @system = System.find(params[:id])
   end
@@ -35,7 +39,7 @@ class Admin::SystemsController < ApplicationController
   private
 
   def system_params
-    params.require(:systems).permit(:name,:bit_type,:DirectX,:year_of_release,:upper_memory_limit)
+    params.require(:system).permit(:name,:bit_type,:DirectX,:year_of_release,:upper_memory_limit)
   end
 
 end

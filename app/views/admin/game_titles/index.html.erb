@@ -4,8 +4,8 @@ admin/game_titles#index
     <table class = "table table-hover">
       <thead>
         <tr>
-          <th>タイプ名</th>
-          <th></th>
+          <th>タイトル名</th>
+          <th>ゲームジャンル</th>
           <th colspan="1"></th>
         </tr>
       </thead>
@@ -13,11 +13,12 @@ admin/game_titles#index
         <% @game_titles.each do |game_title| %>
         <tr>
           <td><%= game_title.name %></td>
+          <td><%= game_title.genre.name %></td>
+          <td><%= link_to "詳細", admin_game_title_path(game_title.id) ,class: "btn btn-primary" %></td>
           <td><%= link_to "編集", edit_admin_game_title_path(game_title.id) ,class: "btn btn-primary" %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    
-    
-  
+
+

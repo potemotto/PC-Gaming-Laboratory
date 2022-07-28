@@ -1,2 +1,36 @@
 public/aricles#new
 <h1>記事作成ページ</h1>
+<table class = "table">
+  <%= form_with model: @aricle, url: aricles_path do |f| %>
+  <thead>
+  </thead>
+    <tbody>
+      <tr><td>
+      ゲームタイトル
+      </td><td>
+      <%= f.select :game_title_id, GameTitle.all.map{ |game| [game.name, game.id]} %>
+      </td></tr>
+
+      <tr><td>
+      分類
+      </td><td>
+      <%= f.select :type_id, Type.all.map{ |type| [type.name, type.id]} %>
+      </td></tr>
+
+      <tr><td>
+      タイトル
+      </td><td>
+      <%= f.text_field :title %>
+      </td></tr>
+
+      <tr><td>
+      本文
+      </td><td>
+      <%= f.text_area :body %>
+      </td></tr>
+
+    </table>
+    <%#= f.hidden_field :public_id, :value => current_public.id %>
+    <%= f.submit "新規登録" %>
+
+    <% end %>

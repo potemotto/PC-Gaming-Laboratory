@@ -1,2 +1,26 @@
 public/aricles#index
 <h1>記事一覧ページ</h1>
+<%= link_to "記事投稿", new_aricle_path %>
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>記事名</th>
+          <th>タイトル名</th>
+          <th>投稿者</th>
+          <th>更新日時</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @aricles.each do |aricle| %>
+        <tr>
+          <td><%#= aricle.title %><%= link_to aricle.title, aricle_path(aricle.id) %></td>
+          <td><%= aricle.game_title.name %></td>
+          <td><%= aricle.public.name %></td>
+          <td><%= aricle.updated_at %></td>
+          
+          <td><%= link_to "編集", edit_aricle_path(aricle.id) ,class: "btn btn-primary" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

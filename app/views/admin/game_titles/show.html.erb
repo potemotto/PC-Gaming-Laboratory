@@ -1,2 +1,15 @@
 admin/game_titles#show
 <h1>タイトル詳細ページ</h1>
+<table class = "table table-hover">
+      <thead>
+      </thead>
+      <tbody>
+        <tr><td>タイトル名</td><td><%= @game_title.name %></td></tr>
+        <tr><td>ジャンル</td><td><%= @game_title.genre.name %></td></tr>
+        <tr><td>要求CPU性能</td><td><%= @game_title.cpu_list.name %></td></tr>
+        <tr><td>要求GPU性能</td><td><%= @game_title.gpu_list.name %></td></tr>
+        <tr><td>必要OSバージョン</td><td><%= @game_title.system.name %> <%= @game_title.system.bit_type %>bit</td></tr>
+        <tr><td>要求メモリ量(GB)</td><td><%= @game_title.recommended_memory %></td></tr>
+        <tr><td>要求ストレージ(GB)</td><td><%= @game_title.request_storage %></td></tr>
+      </tbody>
+    </table>

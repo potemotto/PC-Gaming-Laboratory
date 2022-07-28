@@ -1,6 +1,7 @@
 class CreateAricles < ActiveRecord::Migration[6.1]
   def change
     create_table :aricles do |t|
+      t.integer :public_id
       t.integer :game_title_id
       t.integer :type_id
       t.string :title
