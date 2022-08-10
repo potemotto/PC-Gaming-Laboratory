@@ -1,0 +1,21 @@
+public/computers#index
+<h1>PC情報一覧・登録画面ページ</h1>
+<%= link_to "My PC追加", new_computer_path %>
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>PC名</th>
+          <th></th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @computers.each do |computer| %>
+        <tr>
+          <td><%= computer.name %></td>
+          <td><%= link_to "詳細", computer_path(computer.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "編集", edit_computer_path(computer.id) ,class: "btn btn-primary" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

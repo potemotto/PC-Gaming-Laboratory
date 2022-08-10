@@ -8,6 +8,6 @@ public/customers#show
         <tr><td>メールアドレス</td><td><%= current_public.email %></td></tr>
         <tr><td><%= link_to "編集", edit_public_registration_path(current_public.id) ,class: "btn btn-primary" %></td></tr>
         <tr><td>記事</td><td><%= Aricle.count %>件</td></tr><%#後日ユーザーごとに変更%>
-        <tr><td>My PC一覧</td><td>※準備中</td></tr>
+        <tr><td><%= link_to "My PC一覧", computers_path ,class: "btn btn-primary" %></td><td></td></tr>
       </tbody>
     </table>

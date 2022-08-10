@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     resources :aricles, except: [:destroy]
-    resources :my_computers, except: [:new]
+    resources :computers
     resources :powers, only: [:index]
     resources :cpu_lists, only: [:index]
     resources :gpu_lists, only: [:index]
