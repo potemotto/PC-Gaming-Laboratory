@@ -1,4 +1,4 @@
-public/aricles#new
+public/computers#new
 <h1>My PC登録</h1>
 <table class = "table">
   <%= form_with model: @computer, url: computers_path do |f| %>
@@ -8,44 +8,52 @@ public/aricles#new
       <tr><td>
       PC名
       </td><td>
-      <%= f.text_area :body %>
+      <%= f.text_field :name %>
       </td></tr>
-      
+
+      <tr><td>
+      PC種類
+      </td><td>
+      <%= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %>
+      </td></tr>
+
+      <tr><td>
+      CPU
+      </td><td>
+      <%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %>
+      </td></tr>
+
+      <tr><td>
+      メモリ
+      </td><td>
+      <%= f.text_field :memory_capacity %>GB
+      </td></tr>
+
+      <tr><td>
+      GPU
+      </td><td>
+      <%= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %>
+      </td></tr>
+
+      <tr><td>
+      記憶容量
+      </td><td>
+      <%= f.text_field :free_storage %>GB
+      </td></tr>
+
+      <tr><td>
+      （ゲームをインストールするドライブ）
+      </td><td>
+      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","その他","不明"] %>
+      </td></tr>
+
       <tr><td>
       OS
       </td><td>
       <%= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %>
       </td></tr>
 
-      <tr><td>
-      CPU
-      </td><td>
-      <%= f.select :cpu_list_id, GPUList.all.map{ |cpu| [cpu.name, cpu.id]} %>
-      </td></tr>
-      
-      <tr><td>
-      メモリ
-      </td><td>
-      <%= f.field :memory_capacity %>GB
-      </td></tr>
-
-      <tr><td>
-      GPU
-      </td><td>
-      <%= f.select :gpu_list_id, GPUList.all.map{ |gpu| [gpu.name, gpu.id]} %>
-      </td></tr>
-      
-      <tr><td>
-      記憶容量
-      </td><td>
-      <%= f.field :gpu_list_id %>GB
-      </td></tr>
-      
-
-     
-
     </table>
-    <%#= f.hidden_field :public_id, :value => current_public.id %>
     <%= f.submit "新規登録" %>
 
     <% end %>

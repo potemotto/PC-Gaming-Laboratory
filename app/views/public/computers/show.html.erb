@@ -1,3 +1,55 @@
 public/computers#show
-<h1>PC登録情報編集画面</h1>
-準備中
+<h1>PC登録情報詳細</h1>
+<table class = "table">
+  <thead>
+  </thead>
+    <tbody>
+      <tr><td>
+      PC名
+      </td><td>
+      <%= @computer.name %>
+      </td></tr>
+
+      <tr><td>
+      PC種類
+      </td><td>
+      <%= @computer.pc_type %>
+      </td></tr>
+
+      <tr><td>
+      CPU
+      </td><td>
+      <%= @computer.cpu_list_id %>
+      </td></tr>
+
+      <tr><td>
+      メモリ
+      </td><td>
+      <%= @computer.memory_capacity %>GB
+      </td></tr>
+
+      <tr><td>
+      GPU後で修正
+      </td><td>
+      <%#= @conmputer.gpu_list_id %></td></tr>
+
+      <tr><td>
+      記憶容量
+      </td><td>
+      <%= @computer.free_storage %>GB
+      </td></tr>
+
+      <tr><td>
+      （ゲームをインストールするドライブ）
+      </td><td>
+      <%= @computer.storage_type %>
+      </td></tr>
+
+      <tr><td>
+      OS
+      </td><td>
+      <%= @computer.system_id %>
+      </td></tr>
+
+    </table>
+

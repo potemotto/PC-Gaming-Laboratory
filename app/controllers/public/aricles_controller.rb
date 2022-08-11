@@ -6,7 +6,7 @@ class Public::AriclesController < ApplicationController
   def create
     @aricle = Aricle.new(aricle_params)
     @aricle.public_id = current_public.id
-    if @aricle.save!
+    if @aricle.save
     redirect_to aricles_path
     flash[:notice] = '新しい記事を作成しました。'
     else

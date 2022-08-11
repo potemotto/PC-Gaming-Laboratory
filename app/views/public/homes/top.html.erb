@@ -1,7 +1,13 @@
 public/homes#top
 <h1>topページ</h1>
-性能チェッカーリンク
 
-紹介メッセージ
+紹介メッセージ<br>
+
+<%= link_to "ゲームタイトル一覧", game_titles_path ,class: "btn btn-primary" %><br>
 
 記事一覧
+<% @Aricles.first(4).each do |aricle| %><%# 4回だけ処理して終了 %>
+    <div class="col-md-3">
+      <ul class="list-inline">
+    <%= link_to aricle.title, aricle_path(aricle.id) %>
+  <% end %>

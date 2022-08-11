@@ -5,7 +5,7 @@ public/computers#index
       <thead>
         <tr>
           <th>PC名</th>
-          <th></th>
+          <th>更新日時</th>
           <th colspan="1"></th>
         </tr>
       </thead>
@@ -13,8 +13,10 @@ public/computers#index
         <% @computers.each do |computer| %>
         <tr>
           <td><%= computer.name %></td>
+          <td><%= computer.updated_at %></td>
           <td><%= link_to "詳細", computer_path(computer.id) ,class: "btn btn-primary" %></td>
           <td><%= link_to "編集", edit_computer_path(computer.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "削除", computer_path(computer.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" "btn btn-primary" %></td>
         </tr>
         <% end %>
       </tbody>

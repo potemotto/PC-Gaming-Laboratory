@@ -1,2 +1,21 @@
 public/game_titles#index
 <h1>タイトル一覧ページ</h1>
+<%= link_to "タイトル追加", game_titles_path %>
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>タイトル名</th>
+          <th>ゲームジャンル</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @game_titles.each do |game_title| %>
+        <tr>
+          <td><%= game_title.name %></td>
+          <td><%= game_title.genre.name %></td>
+          <td><%= link_to "このタイトルで", admin_game_title_path(game_title.id) ,class: "btn btn-primary" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

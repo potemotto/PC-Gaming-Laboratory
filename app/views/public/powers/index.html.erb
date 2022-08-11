@@ -1,2 +1,9 @@
 public/powers#index
 <h1>性能比較ページ</h1>
+使用する設定
+My PC
+<% @computers.each do |computer| %><%# 4回だけ処理して終了 %>
+    <div class="col-md-3">
+      <ul class="list-inline">
+    <%= link_to computer.name, computer_path(computer.id) %>
+  <% end %>

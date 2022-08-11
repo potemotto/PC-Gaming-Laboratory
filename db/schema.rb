@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 2022_07_27_114556) do
 
   create_table "computers", force: :cascade do |t|
     t.integer "system_id"
+    t.integer "public_id"
     t.integer "cpu_list_id"
     t.integer "gpu_list_id"
     t.string "name"
-    t.integer "number_of_memories"
     t.integer "memory_capacity"
     t.integer "DirectX"
     t.integer "free_storage"

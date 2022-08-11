@@ -1,3 +1,60 @@
 public/computers#edit
 <h1>PC登録情報編集画面</h1>
-準備中
+<h1>My PC登録</h1>
+<table class = "table">
+  <%= form_with model: @computer, url: computers_path(@computer.id) do |f| %>
+  <thead>
+  </thead>
+    <tbody>
+      <tr><td>
+      PC名
+      </td><td>
+      <%= f.text_field :name %>
+      </td></tr>
+
+      <tr><td>
+      PC種類
+      </td><td>
+      <%= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %>
+      </td></tr>
+
+      <tr><td>
+      CPU
+      </td><td>
+      <%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %>
+      </td></tr>
+
+      <tr><td>
+      メモリ
+      </td><td>
+      <%= f.text_field :memory_capacity %>GB
+      </td></tr>
+
+      <tr><td>
+      GPU準備中
+      </td><td>
+      <%#= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %>
+      </td></tr>
+
+      <tr><td>
+      記憶容量
+      </td><td>
+      <%= f.text_field :free_storage %>GB
+      </td></tr>
+
+      <tr><td>
+      （ゲームをインストールするドライブ）
+      </td><td>
+      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","その他","不明"] %>
+      </td></tr>
+
+      <tr><td>
+      OS
+      </td><td>
+      <%= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %>
+      </td></tr>
+
+    </table>
+    <%= f.submit "変更を保存", class: "btn btn-primary" %>
+
+    <% end %>
