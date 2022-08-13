@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="col-md-6 offset-md-2">
+    <div class="form-group">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -10,7 +13,7 @@
 
   <div class="field">
     <%= f.label :"メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -32,7 +35,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :"現在のパスワード" %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :"現在のパスワード" %> <i>(変更しない場合は空欄にしてください)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
@@ -40,3 +43,6 @@
     <%= f.submit "変更する" %>
   </div>
 <% end %>
+  </div>
+ </div>
+</div>

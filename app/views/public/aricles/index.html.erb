@@ -1,6 +1,7 @@
-public/aricles#index
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>記事一覧ページ</h1>
-<%= link_to "記事投稿", new_aricle_path %>
+<%= link_to "記事投稿", new_aricle_path,class: "btn btn-success" %>
     <table class = "table table-hover">
       <thead>
         <tr>
@@ -14,13 +15,21 @@ public/aricles#index
       <tbody>
         <% @aricles.each do |aricle| %>
         <tr>
-          <td><%#= aricle.title %><%= link_to aricle.title, aricle_path(aricle.id) %></td>
+          <td><%= link_to aricle.title, aricle_path(aricle.id),class: "btn btn-dark" %></td>
           <td><%= aricle.game_title.name %></td>
           <td><%= aricle.public.name %></td>
-          <td><%= aricle.updated_at %></td>
-          
-          <td><%= link_to "編集", edit_aricle_path(aricle.id) ,class: "btn btn-primary" %></td>
+          <td><%= aricle.updated_at.to_s(:datetime_jp) %></td>
+          <% if current_public.id == aricle.public_id %>
+           <td>
+            <%= link_to "編集", edit_aricle_path(aricle.id) ,class: "btn btn-success" %>
+           </td>
+          <% else %>
+           <td>
+           </td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>

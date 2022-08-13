@@ -1,9 +1,12 @@
+<div class="row">
+  <div class="col-md-6 offset-md-2">
+    <div class="form-group">
 <h2>ログイン</h2>
 
 <%= form_with model: @public, url: public_session_path  do |f| %>
   <div class="field">
     <%= f.label :"メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control email" %>
   </div>
 
   <div class="field">
@@ -19,8 +22,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログイン",class: "btn btn-primary" %>
   </div>
 <% end %>
-
+<br>
 <%= render "public/shared/links" %>
+    </div>
+  </div>
+</div>

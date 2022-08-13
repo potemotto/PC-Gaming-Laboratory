@@ -1,6 +1,7 @@
-admin/types#index
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>記事タイプ一覧ページ</h1>
-<%= link_to "ゲームジャンル一覧ページ", admin_genres_path %>
+<%= link_to "ゲームジャンル一覧ページ", admin_genres_path, class: "btn btn-info" %>
 <table class = "table">
   <thead>
     <h2>記事タイプ一覧・追加</h2><br>
@@ -13,7 +14,7 @@ admin/types#index
       <%= f.text_field :name %>
       </td>
       <td>
-      <%= f.submit "新規登録" %>
+      <%= f.submit "新規登録", class: "btn btn-primary" %>
       </td></tr>
       </tbody>
     </table>
@@ -32,8 +33,10 @@ admin/types#index
         <% @types.each do |type| %>
         <tr>
           <td><%= type.name %></td>
-          <td><%= link_to "編集", edit_admin_type_path(type.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "編集", edit_admin_type_path(type.id) ,class: "btn btn-success" %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>

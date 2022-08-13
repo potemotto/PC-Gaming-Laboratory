@@ -1,6 +1,6 @@
-admin/game_titles#edit
-<h1>タイトル編集ページ</h1>
-<h2>CPU情報編集</h2><br>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+<h1>タイトル情報編集ページ</h1>
       <%= form_with model: @game_title, url: admin_game_title_path(@game_title.id) do |f| %>
     <table class = "table">
           <tr><td>タイトル名</td><td>
@@ -35,3 +35,5 @@ admin/game_titles#edit
           <%= f.submit "変更を保存", class: "btn btn-primary" %>
 
       <% end %>
+  </div>
+</div>

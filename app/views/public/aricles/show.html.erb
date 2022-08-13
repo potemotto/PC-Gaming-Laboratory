@@ -1,13 +1,16 @@
-public/aricles#show
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>記事詳細ページ</h1>
 
 <table class = "table table-hover">
       <thead>
       </thead>
       <tbody>
-        <tr><td></td>件名</td><td><%= @aricle.title %></td></tr>
+        <tr><td>件名</td><td><%= @aricle.title %></td></tr>
         <tr><td>ゲーム</td><td><%= @aricle.game_title.name %></td></tr>
         <tr><td>種別</td><td><%= @aricle.type.name %></td></tr>
-        <tr><td>本文（あとでけす）</td><td><%= @aricle.body %></td></tr><%#後日ユーザーごとに変更%>
+        <tr><td><%= @aricle.body %></td><th colspan="1"></th></tr><%#後日ユーザーごとに変更%>
         </tbody>
     </table>
+  </div>
+</div>

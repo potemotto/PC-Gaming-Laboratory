@@ -1,2 +1,21 @@
-public/aricles#edit
-<h1>記事編集ページ</h1>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+<h1>記事編集画面</h1>
+<%= form_with model: @aricle, url: admin_aricle_path(@aricle.id) do |f| %>
+    <table class = "table">
+      <div class="form-group">
+          <tr><td>タイトル名</td><td>
+          <%= f.text_field :title, class: "form-control title" %>
+          </td></tr>
+
+          <tr><td>本文</td><td>
+          <%= f.text_area :body, class: "form-control body" %>
+          </td></tr>
+        </table>
+
+          <%= f.submit "変更を保存", class: "btn btn-primary" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

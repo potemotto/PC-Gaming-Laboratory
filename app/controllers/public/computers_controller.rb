@@ -1,4 +1,5 @@
 class Public::ComputersController < ApplicationController
+  before_action :authenticate_public!
   def new
     @computer = Computer.new
   end
@@ -47,7 +48,7 @@ class Public::ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:name,:pc_type,:cpu_list_id,:memory_capacity,:gpu_list_id,:free_storage,:storage_type,:system_id)
+    params.require(:computer).permit(:name,:pc_type,:cpu_list_id,:memory_capacity,:gpu_list_id,:free_storage,:storage_type,:system_id,:public_id)
   end
 
 end

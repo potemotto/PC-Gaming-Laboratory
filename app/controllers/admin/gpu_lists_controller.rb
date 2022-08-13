@@ -1,4 +1,5 @@
 class Admin::GpuListsController < ApplicationController
+  before_action :authenticate_admin!
   def new
     @gpu_list = GpuList.new
   end

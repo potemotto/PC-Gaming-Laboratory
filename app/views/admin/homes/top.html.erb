@@ -1,10 +1,46 @@
-admin/homes#top
-<h1>メニュー画面</h1>
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <h1>管理者メニュー</h1>
+  </div>
 
-<h1><%= link_to "CPU一覧", admin_cpu_lists_path %> <%= link_to "CPU登録", new_admin_cpu_list_path %> <%= link_to "おすすめPC一覧", admin_pc_preset_index_path %></h1><br>
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h2><%= link_to "CPU一覧", admin_cpu_lists_path %></h2>
+  </div>
 
-<h1><%= link_to "GPU一覧", admin_gpu_lists_path %> <%= link_to "GPU登録", new_admin_gpu_list_path %> <%= link_to "ジャンル一覧", admin_genres_path %></h1><br>
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h2><%= link_to "CPU登録", new_admin_cpu_list_path %></h2>
+  </div>
 
-<h1><%= link_to "ユーザー一覧", admin_customers_path %> <%= link_to "タイトル一覧", admin_game_titles_path %> <%= link_to "記事一覧", admin_aricles_path %></h1><br>
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h4><%= link_to "おすすめPC一覧", admin_pc_preset_index_path %></h4>
+    ※準備中
+  </div>
 
-<h1><%= link_to "OS一覧", admin_systems_path %></h1>
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h2><%= link_to "GPU一覧", admin_gpu_lists_path %></h2>
+  </div>
+
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h2><%= link_to "GPU登録", new_admin_gpu_list_path %></h2>
+  </div>
+
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h3><%= link_to "ジャンル一覧", admin_genres_path %></h3>
+  </div>
+
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h3><%= link_to "ユーザー一覧", admin_customers_path %></h3>
+  </div>
+
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h3><%= link_to "タイトル一覧", admin_game_titles_path %></h3>
+  </div>
+
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h2><%= link_to "記事一覧", admin_aricles_path %></h2>
+  </div>
+
+  <div class="jumbotron col-md-3 offset-md-1">
+    <h2><%= link_to "OS一覧", admin_systems_path %></h2>
+  </div>
+</div>

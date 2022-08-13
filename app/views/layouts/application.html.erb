@@ -6,30 +6,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
+  <nav class="navbar navbar-expand-lg bg-secondary">
+  <div class="container">
     <% if public_signed_in? %>
-    <li><%= link_to "PC Gaming Laboratory", root_path %></li>
-    <li>ようこそ！<%= current_public.name %>さん</li>
-    <li><%= link_to "マイページ", customers_my_page_path %></li>
-    <li><%= link_to "使い方", how_to_use_path %></li>
-    <li><%= link_to "記事一覧", aricles_path %></li>
-    <li><%= link_to "ログアウト", destroy_public_session_path, method: :delete %></li>
+    <li class="nav-link text-light"><%= link_to "PC Gaming Laboratory", root_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light">ようこそ！<%= current_public.name %>さん</li>
+    <li class="nav-link text-light"><%= link_to "マイページ", customers_my_page_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "使い方", how_to_use_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "記事一覧", aricles_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "ログアウト", destroy_public_session_path, method: :delete, class: "nav-link text-light" %></li>
     <% elsif admin_signed_in? %>
-    <li><%= link_to "PC Gaming Laboratory", admin_root_path %></li>
-    <li><%= link_to "ユーザー一覧", admin_customers_path %></li>
-    <li><%= link_to "タイトル一覧", admin_game_titles_path %></li>
-    <li><%= link_to "記事一覧", admin_aricles_path %></li>
-    <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+    <li class="nav-link text-light"><%= link_to "PC Gaming Laboratory", admin_root_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "ユーザー一覧", admin_customers_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "タイトル一覧", admin_game_titles_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "記事一覧", admin_aricles_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-light" %></li>
     <% else %>
-    <li><%= link_to "PC Gaming Laboratory", root_path %></li>
-    <li><%= link_to "about", about_path %></li>
-    <li><%= link_to "使い方", how_to_use_path %></li>
-    <li><%= link_to "新規登録", new_public_registration_path %></li>
-    <li><%= link_to "ログイン", new_public_session_path %></li>
+    <li class="nav-link text-light"><%= link_to "PC Gaming Laboratory", root_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "about", about_path, class: "nav-link text-light"%></li>
+    <li class="nav-link text-light"><%= link_to "使い方", how_to_use_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "新規登録", new_public_registration_path, class: "nav-link text-light" %></li>
+    <li class="nav-link text-light"><%= link_to "ログイン", new_public_session_path, class: "nav-link text-light" %></li>
     <% end %>
+  </div>
+  </nav>
   </header>
   <body>
     <%= yield %>

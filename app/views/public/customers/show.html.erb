@@ -1,4 +1,5 @@
-public/customers#show
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>マイページ</h1>
 <table class = "table table-hover">
       <thead>
@@ -6,8 +7,10 @@ public/customers#show
       <tbody>
         <tr><td>名前</td><td><%= current_public.name %></td></tr>
         <tr><td>メールアドレス</td><td><%= current_public.email %></td></tr>
-        <tr><td><%= link_to "編集", edit_public_registration_path(current_public.id) ,class: "btn btn-primary" %></td></tr>
+        <tr><td><%= link_to "編集", edit_public_registration_path(current_public.id) ,class: "btn btn-success" %></td><th colspan="1"></th></tr>
         <tr><td>記事</td><td><%= Aricle.count %>件</td></tr><%#後日ユーザーごとに変更%>
-        <tr><td><%= link_to "My PC一覧", computers_path ,class: "btn btn-primary" %></td><td></td></tr>
+        <tr><td><%= link_to "My PC一覧", computers_path ,class: "btn btn-secondary" %></td><td></td></tr>
       </tbody>
     </table>
+  </div>
+</div>

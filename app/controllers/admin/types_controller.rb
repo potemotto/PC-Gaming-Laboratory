@@ -1,4 +1,5 @@
 class Admin::TypesController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @types = Type.all
     @type = Type.new

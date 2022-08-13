@@ -1,13 +1,21 @@
-public/homes#top
-<h1>topページ</h1>
+<div class="row">
+  <div class="jumbotron col-md-8 offset-md-2">
+<h1>紹介文を入力</h1>
+  </div>
 
-紹介メッセージ<br>
-
-<%= link_to "ゲームタイトル一覧", game_titles_path ,class: "btn btn-primary" %><br>
-
-記事一覧
+<div class="col-md-8 offset-md-2">
+<%= link_to "タイトル別性能比較ページ", game_titles_path ,class: "btn btn-secondary" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+<h1>記事一覧</h1>
+  </div>
 <% @Aricles.first(4).each do |aricle| %><%# 4回だけ処理して終了 %>
-    <div class="col-md-3">
+    <div class="jumbotron col-md-4 offset-md-2">
       <ul class="list-inline">
-    <%= link_to aricle.title, aricle_path(aricle.id) %>
+    <h4 class="font-weight-bold">タイトル</h4><%= link_to aricle.title, aricle_path(aricle.id), class: "btn btn-secondary" %><br>
+    <h4 class="font-weight-bold">投稿者</h4><%= aricle.public.name %>
   <% end %>
+  </div>
+</div>

@@ -1,9 +1,11 @@
-public/aricles#new
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>記事作成ページ</h1>
 <table class = "table">
   <%= form_with model: @aricle, url: aricles_path do |f| %>
   <thead>
   </thead>
+  <div class="form-group">
     <tbody>
       <tr><td>
       ゲームタイトル
@@ -20,16 +22,19 @@ public/aricles#new
       <tr><td>
       タイトル
       </td><td>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "form-control title" %>
       </td></tr>
 
       <tr><td>
       本文
       </td><td>
-      <%= f.text_area :body %>
+      <%= f.text_area :body, class: "form-control input-lg body" %>
       </td></tr>
-
-    </table>
+    </tbody>
+    </div>
+  </table>
     <%= f.submit "新規登録" %>
 
     <% end %>
+  </div>
+</div>

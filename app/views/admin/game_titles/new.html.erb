@@ -1,10 +1,10 @@
-admin/game_titles#new
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>ゲームタイトル登録ページ</h1>
 
 
   <table class = "table">
   <thead>
-    <h2>タイトル情報</h2><br>
   </thead>
   <tbody>
     <%= form_with model: @game_title, url: admin_game_titles_path do |f| %>
@@ -52,5 +52,7 @@ admin/game_titles#new
 
       </tbody>
     </table>
-    <%= f.submit "新規登録" %>
+    <%= f.submit "新規登録" ,class: "btn btn-primary" %>
     <% end %>
+  </div>
+</div>

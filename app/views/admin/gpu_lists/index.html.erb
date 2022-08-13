@@ -1,6 +1,7 @@
-admin/gpu_lists#index
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>GPU一覧ページ</h1>
-<%= link_to "GPU情報登録ページ", new_admin_gpu_list_path %>
+<%= link_to "GPU情報登録ページ", new_admin_gpu_list_path, class: "btn btn-secondary" %>
     <table class = "table table-hover">
       <thead>
         <tr>
@@ -17,8 +18,10 @@ admin/gpu_lists#index
           <td><%= gpu_lists.name %></td>
           <td><%= gpu_lists.year_of_release %></td>
           <td><%= link_to "詳細", admin_gpu_list_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
-          <td><%= link_to "編集", edit_admin_gpu_list_path(gpu_lists.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "編集", edit_admin_gpu_list_path(gpu_lists.id) ,class: "btn btn-success" %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>

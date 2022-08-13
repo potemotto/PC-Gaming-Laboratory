@@ -1,3 +1,27 @@
-admin/aricles#index
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>記事一覧ページ</h1>
-準備中
+  <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>記事名</th>
+          <th>タイトル名</th>
+          <th>投稿者</th>
+          <th>更新日時</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @aricles.each do |aricle| %>
+        <tr>
+          <td><%= link_to aricle.title, admin_aricle_path(aricle.id) ,class: "btn btn-info" %></td>
+          <td><%= aricle.game_title.name %></td>
+          <td><%= aricle.public.name %></td>
+          <td><%= aricle.updated_at.to_s(:datetime_jp) %></td>
+          <td><%= link_to "編集", edit_admin_aricle_path(aricle.id) ,class: "btn btn-success" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

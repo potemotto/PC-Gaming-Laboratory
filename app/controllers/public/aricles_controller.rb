@@ -1,4 +1,5 @@
 class Public::AriclesController < ApplicationController
+  before_action :authenticate_public!,except: [:index,:show]
   def new
     @aricle = Aricle.new
   end
@@ -30,7 +31,7 @@ class Public::AriclesController < ApplicationController
   def update
     @aricle = Aricle.find(params[:id])
     if @aricle.update(aricle_params)
-    redirect_to aricle_path
+    redirect_to aricles_path
     flash[:notice] = '記事を修正しました'
     else
     render :edit

@@ -34,12 +34,11 @@ Rails.application.routes.draw do
     resources :powers, only: [:index]
     resources :cpu_lists, only: [:index]
     resources :gpu_lists, only: [:index]
-    resources :game_titles, only: [:index]
+    resources :game_titles, only: [:index,:show]
     resources :customers, only: [:edit,:update]
     get "customers/my_page" => "customers#show"
     get "about" => "homes#about"
     get "how_to_use" => "homes#explanation"
-    get "game_title/:id/comparison" => "game_titles#comparison"
 
   end
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

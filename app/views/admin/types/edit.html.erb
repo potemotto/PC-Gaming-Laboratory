@@ -1,7 +1,7 @@
-admin/types#edit
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>記事タイプ編集ページ</h1>
 
-<h2>タイプ編集</h2><br>
       <%= form_with model: @type, url: admin_type_path(@type.id) do |f| %>
     <table class = "table">
           <tr><td>
@@ -12,3 +12,5 @@ admin/types#edit
           <%= f.submit "変更を保存", class: "btn btn-primary" %>
           </td>　</tr>
       <% end %>
+    </div>
+</div>

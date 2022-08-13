@@ -1,3 +1,27 @@
-admin/pc_preset#index
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>PCプリセット一覧ページ</h1>
-※準備中
+※機能実装準備中
+<%#= link_to "プリセット登録", new_admin_pc_preset_path %>
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>プリセット名</th>
+          <th>更新日時</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @computers.each do |computer| %>
+        <tr>
+          <td><%= computer.name %></td>
+          <td><%= computer.updated_at %></td>
+          <td><%= link_to "詳細", admin_pc_preset(computer.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "編集", edit_admin_pc_preset(computer.id) ,class: "btn btn-primary" %></td>
+          <td><%= link_to "削除", admin_pc_preset(computer.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" "btn btn-primary" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

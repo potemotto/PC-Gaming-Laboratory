@@ -1,4 +1,5 @@
 class Admin::CpuListsController < ApplicationController
+  before_action :authenticate_admin!
   def new
     @cpu_list = CpuList.new
   end
