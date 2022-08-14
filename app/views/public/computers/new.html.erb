@@ -1,4 +1,5 @@
-public/computers#new
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>My PC登録</h1>
 <table class = "table">
   <%= form_with model: @computer, url: computers_path do |f| %>
@@ -44,7 +45,7 @@ public/computers#new
       <tr><td>
       （ゲームをインストールするドライブ）
       </td><td>
-      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","その他","不明"] %>
+      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %>
       </td></tr>
 
       <tr><td>
@@ -57,3 +58,5 @@ public/computers#new
     <%= f.submit "新規登録" %>
 
     <% end %>
+    </div>
+</div>

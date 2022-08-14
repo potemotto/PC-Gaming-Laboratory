@@ -1,4 +1,5 @@
-public/computers#edit
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 <h1>PC登録情報編集画面</h1>
 <h1>My PC登録</h1>
 <table class = "table">
@@ -45,7 +46,7 @@ public/computers#edit
       <tr><td>
       （ゲームをインストールするドライブ）
       </td><td>
-      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","その他","不明"] %>
+      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %>
       </td></tr>
 
       <tr><td>
@@ -58,3 +59,5 @@ public/computers#edit
     <%= f.submit "変更を保存", class: "btn btn-primary" %>
 
     <% end %>
+</div>
+</div>
