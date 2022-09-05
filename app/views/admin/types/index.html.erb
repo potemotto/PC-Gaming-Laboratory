@@ -1,15 +1,14 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
-<h1>記事タイプ一覧ページ</h1>
 <%= link_to "ゲームジャンル一覧ページ", admin_genres_path, class: "btn btn-info" %>
+<h1>記事タイプ一覧ページ</h1>
 <table class = "table">
   <thead>
-    <h2>記事タイプ一覧・追加</h2><br>
   </thead>
   <tbody>
     <%= form_with model: @type, url: admin_types_path do |f| %>
       <tr><td>
-      <lavel>記事タイプ登録</lavel>
+      <b>記事タイプ登録</b>
       </td><td>
       <%= f.text_field :name %>
       </td>

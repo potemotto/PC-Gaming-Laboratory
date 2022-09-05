@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
-<h1>ゲームジャンル一覧ページ</h1>
 <%= link_to "記事タイプ一覧ページ", admin_types_path, class: "btn btn-info" %>
+<h1>ゲームジャンル一覧ページ</h1>
 <%= form_with model: @genre, url: admin_genres_path do |f| %>
-  <p>ゲームジャンル登録</p>
+  <b>ゲームジャンル登録</b>
   <%= f.text_field :name %>
   <%= f.submit "新規登録",class: "btn btn-primary" %>
 <% end %>
