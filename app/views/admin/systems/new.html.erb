@@ -1,47 +1,67 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
 <h1>OS情報登録ページ</h1>
-
-※
-<table class = "table">
-  <thead>
     <h2>登録OS一覧</h2><br>
-  </thead>
-  <tbody>
     <%= form_with model: @system, url: admin_systems_path do |f| %>
-      <tr><td>
+
       OS名称
-      </td><td>
-      <%= f.text_field :name %>
-      </td>
+      <%= f.text_field :name %><br>
 
-      <tr><td>
       bit数
-      </td><td>
-      <%= f.select :bit_type, ["64bit","32bit"] %>
-      </td>
+      <%= f.select :bit_type, ["64bit","32bit"] %><br>
 
-      <tr><td>
       上限メモリ(GB)
-      </td><td>
-      <%= f.text_field :upper_memory_limit %>
-      </td>
+      <%= f.text_field :upper_memory_limit %><br>
 
-      <tr><td>
       DirectX
-      </td><td>
-      <%= f.text_field :DirectX %>
-      </td>
+      <%= f.text_field :DirectX %><br>
 
-      <tr><td>
       リリース年
-      </td><td>
-      <%= f.text_field :year_of_release %>
-      </td>
+      <%= f.text_field :year_of_release %><br>
 
-      </tbody>
-    </table>
+
     <%= f.submit "新規登録", class: "btn btn-primary" %>
     <% end %>
+※
+
+  <!--<tbody><table class = "table">-->
+  <!--<thead>-->
+  <!--  <h2>登録OS一覧</h2><br>-->
+  <!--</thead>-->
+  <!--  <#%= form_with model: @system, url: admin_systems_path do |f| %>-->
+  <!--    <tr><td>-->
+  <!--    OS名称-->
+  <!--    </td><td>-->
+  <!--    <#%= f.text_field :name %>-->
+  <!--    </td>-->
+
+  <!--    <tr><td>-->
+  <!--    bit数-->
+  <!--    </td><td>-->
+  <!--    <#%= f.select :bit_type, ["64bit","32bit"] %>-->
+  <!--    </td>-->
+
+  <!--    <tr><td>-->
+  <!--    上限メモリ(GB)-->
+  <!--    </td><td>-->
+  <!--    <#%= f.text_field :upper_memory_limit %>-->
+  <!--    </td>-->
+
+  <!--    <tr><td>-->
+  <!--    DirectX-->
+  <!--    </td><td>-->
+  <!--    <#%= f.text_field :DirectX %>-->
+  <!--    </td>-->
+
+  <!--    <tr><td>-->
+  <!--    リリース年-->
+  <!--    </td><td>-->
+  <!--    <#%= f.text_field :year_of_release %>-->
+  <!--    </td>-->
+
+  <!--    </tbody>-->
+  <!--  </table>-->
+  <!--  <%#= f.submit "新規登録", class: "btn btn-primary" %>-->
+  <!--  <#% end %>-->
   </div>
 </div>
