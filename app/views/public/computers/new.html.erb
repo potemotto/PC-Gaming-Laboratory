@@ -1,62 +1,87 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
 <h1>My PC登録</h1>
+<%= form_with model: @computer, url: computers_path do |f| %>
+
+<%= f.text_field :name %>
+
+<%= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %>
+
+<%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %>
+
+
+<%= f.text_field :memory_capacity %>GB
+
+<%= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %>
+
+<%= f.text_field :free_storage %>GB
+
+ （ゲームをインストールするドライブ）
+
+<%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %>
+
+<%= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %>
+
+<%= f.submit "新規登録" %>
+
+<% end %>
+
 <!--<table class = "table">-->
-<!--  <%= form_with model: @computer, url: computers_path do |f| %>-->
+<!--  <%#= form_with model: @computer, url: computers_path do |f| %>-->
 <!--  <thead>-->
 <!--  </thead>-->
 <!--    <tbody>-->
 <!--      <tr><td>-->
 <!--      PC名-->
 <!--      </td><td>-->
-<!--      <%= f.text_field :name %>-->
+<!--      <%#= f.text_field :name %>-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      PC種類-->
 <!--      </td><td>-->
-<!--      <%= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %>-->
+<!--      <%#= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %>-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      CPU-->
 <!--      </td><td>-->
-<!--      <%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %>-->
+<!--      <%#= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %>-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      メモリ-->
 <!--      </td><td>-->
-<!--      <%= f.text_field :memory_capacity %>GB-->
+<!--      <%#= f.text_field :memory_capacity %>GB-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      GPU-->
 <!--      </td><td>-->
-<!--      <%= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %>-->
+<!--      <%#= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %>-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      記憶容量-->
 <!--      </td><td>-->
-<!--      <%= f.text_field :free_storage %>GB-->
+<!--      <%#= f.text_field :free_storage %>GB-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      （ゲームをインストールするドライブ）-->
 <!--      </td><td>-->
-<!--      <%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %>-->
+<!--      <%#= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %>-->
 <!--      </td></tr>-->
 
 <!--      <tr><td>-->
 <!--      OS-->
 <!--      </td><td>-->
-<!--      <%= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %>-->
+<!--      <%#= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %>-->
 <!--      </td></tr>-->
 
 <!--    </table>-->
-<!--    <%= f.submit "新規登録" %>-->
+<!--    <%#= f.submit "新規登録" %>-->
 
-<!--    <% end %>-->
+<!--    <%# end %>-->
     </div>
 </div>
