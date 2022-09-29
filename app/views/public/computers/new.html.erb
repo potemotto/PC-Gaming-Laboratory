@@ -3,24 +3,21 @@
 <h1>My PC登録</h1>
 <%= form_with model: @computer, url: computers_path do |f| %>
 
-<%= f.text_field :name %>
+PC名 <%= f.text_field :name %><br>
 
-<%= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %>
+PCタイプ <%= f.select :pc_type, ["デスクトップPC","ノートPC","一体型","その他","不明"] %><br>
 
-<%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %>
+CPU名 <%= f.select :cpu_list_id, CpuList.all.map{ |cpu| [cpu.name, cpu.id]} %><br>
 
+メモリ量<%= f.text_field :memory_capacity %>GB<br>
 
-<%= f.text_field :memory_capacity %>GB
+GPU名<%= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %><br>
 
-<%= f.select :gpu_list_id, GpuList.all.map{ |gpu| [gpu.name, gpu.id]} %>
+空きストレージ量<%= f.text_field :free_storage %>GB<br>
 
-<%= f.text_field :free_storage %>GB
+ストレージタイプ<%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %><br>
 
- （ゲームをインストールするドライブ）
-
-<%= f.select :storage_type, ["2.5インチHDD","3.5インチHDD","2.5インチSSD","M.2_SSD","それ以外","分からない"] %>
-
-<%= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %>
+OS名<%= f.select :system_id, System.all.map{ |system| [system.name, system.id]} %><br>
 
 <%= f.submit "新規登録" %>
 
