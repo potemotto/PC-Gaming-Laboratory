@@ -3,24 +3,15 @@
 <%= link_to "ゲームジャンル一覧ページ", admin_genres_path, class: "btn btn-info" %>
 <h1>記事タイプ一覧ページ</h1>
 
-    
-  <table class = "table">
-  <thead>
-  </thead>
-  <tbody>
     <%= form_with model: @type, url: admin_types_path do |f| %>
-      <tr><td>
+
       <b>記事タイプ登録</b>
-      </td><td>
+      <br>
       <%= f.text_field :name %>
-      </td>
-      <td>
+      <br>
       <%= f.submit "新規登録", class: "btn btn-primary" %>
-      </td></tr>
-      </tbody>
-    </table>
+      <br>
     <% end %>
-    <br>
 
     <table class = "table table-hover">
       <thead>
